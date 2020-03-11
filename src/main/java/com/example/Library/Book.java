@@ -25,6 +25,14 @@ protected Book(){
         return id;
     }
 
+    public Book(Long id, String booktitle, String author, int yearcreate, String discipline) {
+        this.id = id;
+        this.booktitle = booktitle;
+        this.author = author;
+        this.yearcreate = yearcreate;
+        this.discipline = discipline;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

@@ -10,6 +10,12 @@
     <h1>Library</h1>
     <a href="/new">Create New Book</a>
     <br/><br/>
+    <form method="post" action="filter">
+    <input type="booktitle" name="search" placeholder="Enter text to Find">
+    <button>Find</button>
+
+    </form>
+    <br/>
 <table border="1" cellpadding="10">
     <thead>
     <tr>
@@ -29,7 +35,9 @@
         <td th:text="${book.yearcreate}">Year Create</td>
         <td th:text="${book.discipline}">Discipline</td>
         <td>
-
+            <a th:href="@{'/edit/' + ${book.id}}">Edit</a>
+            &nbsp;&nbsp;&nbsp;
+            <a th:href="@{'/delete/' + ${book.id}}">Delete</a>
         </td>
     </tr>
     </tbody>
