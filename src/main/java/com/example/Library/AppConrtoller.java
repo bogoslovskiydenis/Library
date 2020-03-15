@@ -14,8 +14,10 @@ import java.util.Map;
 
 @Controller
 public class AppConrtoller {
+
     @Autowired
     private BookService service;
+
     @RequestMapping("/")
     public String viewHomePage(Model model){
         List<Book> listBook = service.listAll();
@@ -23,6 +25,7 @@ public class AppConrtoller {
 
         return "home";
     }
+
     @RequestMapping("/new")
     public String showNewBookPage(Model model){
         Book book = new Book();

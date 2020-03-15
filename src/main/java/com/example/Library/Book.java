@@ -13,7 +13,7 @@ public class Book {
     private Long id;
     private String booktitle;
     private String author;
-    private int yearcreate;
+    private Integer publishYear;
     private String discipline;
 
 protected Book(){
@@ -25,11 +25,11 @@ protected Book(){
         return id;
     }
 
-    public Book(Long id, String booktitle, String author, int yearcreate, String discipline) {
+    public Book(Long id, String booktitle, String author, int publishYear, String discipline) {
         this.id = id;
         this.booktitle = booktitle;
         this.author = author;
-        this.yearcreate = yearcreate;
+        this.publishYear = publishYear;
         this.discipline = discipline;
     }
 
@@ -53,12 +53,12 @@ protected Book(){
         this.author = author;
     }
 
-    public int getYearcreate() {
-        return yearcreate;
+    public Integer getPublishYear() {
+        return publishYear;
     }
 
-    public void setYearcreate(int yearcreate) {
-        this.yearcreate = yearcreate;
+    public void setPublishYear(Integer publishYear) {
+        this.publishYear = publishYear;
     }
 
     public String getDiscipline() {
