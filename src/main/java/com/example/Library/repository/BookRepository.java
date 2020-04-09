@@ -1,8 +1,9 @@
 /**
  * Created by Bogoslovskiy Denis 2020
  */
-package com.example.Library;
+package com.example.Library.repository;
 
+import com.example.Library.domain.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
