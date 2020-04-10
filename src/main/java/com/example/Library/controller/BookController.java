@@ -1,14 +1,18 @@
 /**
  * Created by Bogoslovskiy Denis 2020
  */
-package com.example.Library;
+package com.example.Library.controller;
 
+import com.example.Library.domain.Book;
+import com.example.Library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Controller
@@ -61,8 +65,15 @@ public class BookController {
     @RequestMapping("/edit/{id}")
     public ModelAndView showEditBookPage(@PathVariable(name = "id") Long id) {
         ModelAndView modelAndView = new ModelAndView("edit_book");
-        Book book = service.get(id);
-        modelAndView.addObject("book", book);
+
+        try {
+            Book book = service.get(id);
+            modelAndView.addObject("book", book);
+        } catch (EntityNotFoundException e) {
+            modelAndView.setStatus(HttpStatus.NOT_FOUND);
+            modelAndView.setViewName("404");
+        }
+
         return modelAndView;
 
     }

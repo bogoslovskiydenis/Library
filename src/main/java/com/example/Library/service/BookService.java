@@ -1,17 +1,20 @@
 /**
  * Created by Bogoslovskiy Denis 2020
  */
-package com.example.Library;
+package com.example.Library.service;
 
+import com.example.Library.domain.Book;
+import com.example.Library.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Service
 public class BookService {
     @Autowired
-    private  BookRepository repository;
+    private BookRepository repository;
 
     public List<Book> listAll(){
         return repository.findAll();
@@ -23,7 +26,7 @@ public class BookService {
         repository.save(book);
     }
     public Book get(Long id){
-        return repository.findById(id).get();
+        return repository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
     public void delete(Long id){
         repository.deleteById(id);

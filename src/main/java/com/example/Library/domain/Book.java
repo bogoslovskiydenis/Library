@@ -1,7 +1,7 @@
 /**
  * Created by Bogoslovskiy Denis 2020
  */
-package com.example.Library;
+package com.example.Library.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,9 +16,10 @@ public class Book {
     private Integer publishYear;
     private String discipline;
 
-protected Book(){
+    public Book() {
 
-}
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
