@@ -1,12 +1,10 @@
 /**
  * Created by Bogoslovskiy Denis 2020
  */
-package com.example.Library;
+package com.example.library;
 
-import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class LibraryApplication {

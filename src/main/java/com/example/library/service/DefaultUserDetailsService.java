@@ -1,8 +1,8 @@
-package com.example.Library.service;
+package com.example.library.service;
 
-import com.example.Library.domain.User;
-import com.example.Library.domain.UserPrincipal;
-import com.example.Library.repository.UserRepository;
+import com.example.library.domain.User;
+import com.example.library.domain.UserPrincipal;
+import com.example.library.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

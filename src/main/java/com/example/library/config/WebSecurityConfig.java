@@ -1,6 +1,6 @@
-package com.example.Library.config;
+package com.example.library.config;
 
-import com.example.Library.service.DefaultUserDetailsService;
+import com.example.library.service.DefaultUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

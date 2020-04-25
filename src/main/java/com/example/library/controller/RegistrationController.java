@@ -1,8 +1,8 @@
-package com.example.Library.controller;
+package com.example.library.controller;
 
-import com.example.Library.domain.Role;
-import com.example.Library.domain.User;
-import com.example.Library.repository.UserRepository;
+import com.example.library.domain.Role;
+import com.example.library.domain.User;
+import com.example.library.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

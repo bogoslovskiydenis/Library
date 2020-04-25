@@ -1,11 +1,7 @@
-/**
- * Created by Bogoslovskiy Denis 2020
- */
-package com.example.Library.controller;
+package com.example.library.controller;
 
-import com.example.Library.domain.Book;
-import com.example.Library.service.BookService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.library.domain.Book;
+import com.example.library.service.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +15,11 @@ import java.util.List;
 @RequestMapping("/books")
 public class BookController {
 
-    private BookService service;
+    private static final String BOOKS_PAGE = "books";
+    private static final String NEW_BOOK_PAGE = "new_book";
+    private static final String REDIRECT_TO_BOOKS_PAGE = "redirect:/books";
+
+    private final BookService service;
 
     public BookController(BookService bookService) {
         this.service = bookService;
@@ -35,7 +35,7 @@ public class BookController {
 
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
     public String showBooks(Model model, @RequestParam(required = false) String title) {
-        List<Book> listBook = null;
+        List<Book> listBook;
 
         if (title != null) {
             listBook = service.findByBookTitle(title);
@@ -44,7 +44,7 @@ public class BookController {
         }
         model.addAttribute("listBook", listBook);
 
-        return "books";
+        return BOOKS_PAGE;
     }
 
     @RequestMapping("/new")
@@ -52,14 +52,14 @@ public class BookController {
         Book book = new Book();
         model.addAttribute("book", book);
 
-        return "new_book";
+        return NEW_BOOK_PAGE;
 
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveBook(@ModelAttribute("book") Book book) {
         service.save(book);
-        return "redirect:/books";
+        return REDIRECT_TO_BOOKS_PAGE;
     }
 
     @RequestMapping("/edit/{id}")
@@ -82,7 +82,7 @@ public class BookController {
     public String deleteBook(@PathVariable(name = "id") Long id) {
         service.delete(id);
 
-        return "redirect:/books";
+        return REDIRECT_TO_BOOKS_PAGE;
     }
 
 }

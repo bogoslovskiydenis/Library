@@ -1,10 +1,10 @@
 /**
  * Created by Bogoslovskiy Denis 2020
  */
-package com.example.Library.service;
+package com.example.library.service;
 
-import com.example.Library.domain.Book;
-import com.example.Library.repository.BookRepository;
+import com.example.library.domain.Book;
+import com.example.library.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

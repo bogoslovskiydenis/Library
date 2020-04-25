@@ -1,7 +1,7 @@
 /**
  * Created by Bogoslovskiy Denis 2020
  */
-package com.example.Library.domain;
+package com.example.library.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
